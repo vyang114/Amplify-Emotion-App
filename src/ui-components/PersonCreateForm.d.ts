@@ -13,38 +13,35 @@ export declare type ValidationResponse = {
 };
 export declare type ValidationFunction<T> = (value: T, validationResponse: ValidationResponse) => ValidationResponse | Promise<ValidationResponse>;
 export declare type PersonCreateFormInputValues = {
-    boxColour?: string;
     image?: string;
-    physicalAppearance?: string;
+    boxColour?: string;
     physicalSignal?: string;
     socialIdentity?: string;
-    relation?: string;
+    emotion?: string;
     socialRelation?: string;
-    interaction?: string;
+    socialInteraction?: string;
     environment?: string;
 };
 export declare type PersonCreateFormValidationValues = {
-    boxColour?: ValidationFunction<string>;
     image?: ValidationFunction<string>;
-    physicalAppearance?: ValidationFunction<string>;
+    boxColour?: ValidationFunction<string>;
     physicalSignal?: ValidationFunction<string>;
     socialIdentity?: ValidationFunction<string>;
-    relation?: ValidationFunction<string>;
+    emotion?: ValidationFunction<string>;
     socialRelation?: ValidationFunction<string>;
-    interaction?: ValidationFunction<string>;
+    socialInteraction?: ValidationFunction<string>;
     environment?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type PersonCreateFormOverridesProps = {
     PersonCreateFormGrid?: PrimitiveOverrideProps<GridProps>;
-    boxColour?: PrimitiveOverrideProps<TextFieldProps>;
     image?: PrimitiveOverrideProps<TextFieldProps>;
-    physicalAppearance?: PrimitiveOverrideProps<TextFieldProps>;
+    boxColour?: PrimitiveOverrideProps<TextFieldProps>;
     physicalSignal?: PrimitiveOverrideProps<TextAreaFieldProps>;
     socialIdentity?: PrimitiveOverrideProps<TextAreaFieldProps>;
-    relation?: PrimitiveOverrideProps<TextFieldProps>;
+    emotion?: PrimitiveOverrideProps<TextFieldProps>;
     socialRelation?: PrimitiveOverrideProps<TextAreaFieldProps>;
-    interaction?: PrimitiveOverrideProps<TextAreaFieldProps>;
+    socialInteraction?: PrimitiveOverrideProps<TextAreaFieldProps>;
     environment?: PrimitiveOverrideProps<TextAreaFieldProps>;
 } & EscapeHatchProps;
 export declare type PersonCreateFormProps = React.PropsWithChildren<{

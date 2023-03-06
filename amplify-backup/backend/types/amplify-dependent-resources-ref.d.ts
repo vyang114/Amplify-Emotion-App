@@ -18,7 +18,7 @@ export type AmplifyDependentResourcesAttributes = {
     }
   },
   "storage": {
-    "s3amplifyemotionappstorageed41bc89": {
+    "s3amplifyemotionappstorage5899e7ed": {
       "BucketName": "string",
       "Region": "string"
     }

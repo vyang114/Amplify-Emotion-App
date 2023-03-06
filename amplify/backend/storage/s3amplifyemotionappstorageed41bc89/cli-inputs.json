@@ -1,0 +1,16 @@
+{
+  "resourceName": "s3amplifyemotionappstorageed41bc89",
+  "bucketName": "amplifyemotionapp-storage-ed41bc89",
+  "policyUUID": "9b0b3bf4",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "DELETE",
+    "READ"
+  ]
+}

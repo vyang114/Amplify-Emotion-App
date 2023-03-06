@@ -1,7 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
 
-import ProductDetailCollection from './ui-components/ProductDetailCollection';
 import { DataStore } from '@aws-amplify/datastore';
 import { Person } from "./models";
 import CreatePerson from './CreatePerson';
@@ -187,7 +186,7 @@ function App() {
     };
 
     querySubmission()
-    
+
   }, []);
 
   // const displaySubmission = currentTitle => {

@@ -29,59 +29,53 @@ export default function PersonCreateForm(props) {
     ...rest
   } = props;
   const initialValues = {
-    boxColour: "",
     image: "",
-    physicalAppearance: "",
+    boxColour: "",
     physicalSignal: "",
     socialIdentity: "",
-    relation: "",
+    emotion: "",
     socialRelation: "",
-    interaction: "",
+    socialInteraction: "",
     environment: "",
   };
-  const [boxColour, setBoxColour] = React.useState(initialValues.boxColour);
   const [image, setImage] = React.useState(initialValues.image);
-  const [physicalAppearance, setPhysicalAppearance] = React.useState(
-    initialValues.physicalAppearance
-  );
+  const [boxColour, setBoxColour] = React.useState(initialValues.boxColour);
   const [physicalSignal, setPhysicalSignal] = React.useState(
     initialValues.physicalSignal
   );
   const [socialIdentity, setSocialIdentity] = React.useState(
     initialValues.socialIdentity
   );
-  const [relation, setRelation] = React.useState(initialValues.relation);
+  const [emotion, setEmotion] = React.useState(initialValues.emotion);
   const [socialRelation, setSocialRelation] = React.useState(
     initialValues.socialRelation
   );
-  const [interaction, setInteraction] = React.useState(
-    initialValues.interaction
+  const [socialInteraction, setSocialInteraction] = React.useState(
+    initialValues.socialInteraction
   );
   const [environment, setEnvironment] = React.useState(
     initialValues.environment
   );
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
-    setBoxColour(initialValues.boxColour);
     setImage(initialValues.image);
-    setPhysicalAppearance(initialValues.physicalAppearance);
+    setBoxColour(initialValues.boxColour);
     setPhysicalSignal(initialValues.physicalSignal);
     setSocialIdentity(initialValues.socialIdentity);
-    setRelation(initialValues.relation);
+    setEmotion(initialValues.emotion);
     setSocialRelation(initialValues.socialRelation);
-    setInteraction(initialValues.interaction);
+    setSocialInteraction(initialValues.socialInteraction);
     setEnvironment(initialValues.environment);
     setErrors({});
   };
   const validations = {
-    boxColour: [{ type: "Required" }],
-    image: [{ type: "Required" }],
-    physicalAppearance: [],
+    image: [],
+    boxColour: [],
     physicalSignal: [{ type: "JSON" }],
     socialIdentity: [{ type: "JSON" }],
-    relation: [],
+    emotion: [],
     socialRelation: [{ type: "JSON" }],
-    interaction: [{ type: "JSON" }],
+    socialInteraction: [{ type: "JSON" }],
     environment: [{ type: "JSON" }],
   };
   const runValidationTasks = async (
@@ -109,14 +103,13 @@ export default function PersonCreateForm(props) {
       onSubmit={async (event) => {
         event.preventDefault();
         let modelFields = {
-          boxColour,
           image,
-          physicalAppearance,
+          boxColour,
           physicalSignal,
           socialIdentity,
-          relation,
+          emotion,
           socialRelation,
-          interaction,
+          socialInteraction,
           environment,
         };
         const validationResponses = await Promise.all(
@@ -164,54 +157,21 @@ export default function PersonCreateForm(props) {
       {...rest}
     >
       <TextField
-        label="Box colour"
-        isRequired={true}
-        isReadOnly={false}
-        value={boxColour}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              boxColour: value,
-              image,
-              physicalAppearance,
-              physicalSignal,
-              socialIdentity,
-              relation,
-              socialRelation,
-              interaction,
-              environment,
-            };
-            const result = onChange(modelFields);
-            value = result?.boxColour ?? value;
-          }
-          if (errors.boxColour?.hasError) {
-            runValidationTasks("boxColour", value);
-          }
-          setBoxColour(value);
-        }}
-        onBlur={() => runValidationTasks("boxColour", boxColour)}
-        errorMessage={errors.boxColour?.errorMessage}
-        hasError={errors.boxColour?.hasError}
-        {...getOverrideProps(overrides, "boxColour")}
-      ></TextField>
-      <TextField
         label="Image"
-        isRequired={true}
+        isRequired={false}
         isReadOnly={false}
         value={image}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
-              boxColour,
               image: value,
-              physicalAppearance,
+              boxColour,
               physicalSignal,
               socialIdentity,
-              relation,
+              emotion,
               socialRelation,
-              interaction,
+              socialInteraction,
               environment,
             };
             const result = onChange(modelFields);
@@ -228,36 +188,35 @@ export default function PersonCreateForm(props) {
         {...getOverrideProps(overrides, "image")}
       ></TextField>
       <TextField
-        label="Label"
-        value={physicalAppearance}
+        label="Box colour"
+        isRequired={false}
+        isReadOnly={false}
+        value={boxColour}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
-              boxColour,
               image,
-              physicalAppearance: value,
+              boxColour: value,
               physicalSignal,
               socialIdentity,
-              relation,
+              emotion,
               socialRelation,
-              interaction,
+              socialInteraction,
               environment,
             };
             const result = onChange(modelFields);
-            value = result?.physicalAppearance ?? value;
+            value = result?.boxColour ?? value;
           }
-          if (errors.physicalAppearance?.hasError) {
-            runValidationTasks("physicalAppearance", value);
+          if (errors.boxColour?.hasError) {
+            runValidationTasks("boxColour", value);
           }
-          setPhysicalAppearance(value);
+          setBoxColour(value);
         }}
-        onBlur={() =>
-          runValidationTasks("physicalAppearance", physicalAppearance)
-        }
-        errorMessage={errors.physicalAppearance?.errorMessage}
-        hasError={errors.physicalAppearance?.hasError}
-        {...getOverrideProps(overrides, "physicalAppearance")}
+        onBlur={() => runValidationTasks("boxColour", boxColour)}
+        errorMessage={errors.boxColour?.errorMessage}
+        hasError={errors.boxColour?.hasError}
+        {...getOverrideProps(overrides, "boxColour")}
       ></TextField>
       <TextAreaField
         label="Physical signal"
@@ -267,14 +226,13 @@ export default function PersonCreateForm(props) {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
-              boxColour,
               image,
-              physicalAppearance,
+              boxColour,
               physicalSignal: value,
               socialIdentity,
-              relation,
+              emotion,
               socialRelation,
-              interaction,
+              socialInteraction,
               environment,
             };
             const result = onChange(modelFields);
@@ -298,14 +256,13 @@ export default function PersonCreateForm(props) {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
-              boxColour,
               image,
-              physicalAppearance,
+              boxColour,
               physicalSignal,
               socialIdentity: value,
-              relation,
+              emotion,
               socialRelation,
-              interaction,
+              socialInteraction,
               environment,
             };
             const result = onChange(modelFields);
@@ -322,34 +279,35 @@ export default function PersonCreateForm(props) {
         {...getOverrideProps(overrides, "socialIdentity")}
       ></TextAreaField>
       <TextField
-        label="Label"
-        value={relation}
+        label="Emotion"
+        isRequired={false}
+        isReadOnly={false}
+        value={emotion}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
-              boxColour,
               image,
-              physicalAppearance,
+              boxColour,
               physicalSignal,
               socialIdentity,
-              relation: value,
+              emotion: value,
               socialRelation,
-              interaction,
+              socialInteraction,
               environment,
             };
             const result = onChange(modelFields);
-            value = result?.relation ?? value;
+            value = result?.emotion ?? value;
           }
-          if (errors.relation?.hasError) {
-            runValidationTasks("relation", value);
+          if (errors.emotion?.hasError) {
+            runValidationTasks("emotion", value);
           }
-          setRelation(value);
+          setEmotion(value);
         }}
-        onBlur={() => runValidationTasks("relation", relation)}
-        errorMessage={errors.relation?.errorMessage}
-        hasError={errors.relation?.hasError}
-        {...getOverrideProps(overrides, "relation")}
+        onBlur={() => runValidationTasks("emotion", emotion)}
+        errorMessage={errors.emotion?.errorMessage}
+        hasError={errors.emotion?.hasError}
+        {...getOverrideProps(overrides, "emotion")}
       ></TextField>
       <TextAreaField
         label="Social relation"
@@ -359,14 +317,13 @@ export default function PersonCreateForm(props) {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
-              boxColour,
               image,
-              physicalAppearance,
+              boxColour,
               physicalSignal,
               socialIdentity,
-              relation,
+              emotion,
               socialRelation: value,
-              interaction,
+              socialInteraction,
               environment,
             };
             const result = onChange(modelFields);
@@ -383,35 +340,36 @@ export default function PersonCreateForm(props) {
         {...getOverrideProps(overrides, "socialRelation")}
       ></TextAreaField>
       <TextAreaField
-        label="Interaction"
+        label="Social interaction"
         isRequired={false}
         isReadOnly={false}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
-              boxColour,
               image,
-              physicalAppearance,
+              boxColour,
               physicalSignal,
               socialIdentity,
-              relation,
+              emotion,
               socialRelation,
-              interaction: value,
+              socialInteraction: value,
               environment,
             };
             const result = onChange(modelFields);
-            value = result?.interaction ?? value;
+            value = result?.socialInteraction ?? value;
           }
-          if (errors.interaction?.hasError) {
-            runValidationTasks("interaction", value);
+          if (errors.socialInteraction?.hasError) {
+            runValidationTasks("socialInteraction", value);
           }
-          setInteraction(value);
+          setSocialInteraction(value);
         }}
-        onBlur={() => runValidationTasks("interaction", interaction)}
-        errorMessage={errors.interaction?.errorMessage}
-        hasError={errors.interaction?.hasError}
-        {...getOverrideProps(overrides, "interaction")}
+        onBlur={() =>
+          runValidationTasks("socialInteraction", socialInteraction)
+        }
+        errorMessage={errors.socialInteraction?.errorMessage}
+        hasError={errors.socialInteraction?.hasError}
+        {...getOverrideProps(overrides, "socialInteraction")}
       ></TextAreaField>
       <TextAreaField
         label="Environment"
@@ -421,14 +379,13 @@ export default function PersonCreateForm(props) {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
-              boxColour,
               image,
-              physicalAppearance,
+              boxColour,
               physicalSignal,
               socialIdentity,
-              relation,
+              emotion,
               socialRelation,
-              interaction,
+              socialInteraction,
               environment: value,
             };
             const result = onChange(modelFields);

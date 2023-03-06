@@ -4,14 +4,8 @@ import { schema } from './schema';
 
 
 
-const { Relation, Third, Second, Person, ImageEntity, Entity, Post } = initSchema(schema);
+const { Person } = initSchema(schema);
 
 export {
-  Relation,
-  Third,
-  Second,
-  Person,
-  ImageEntity,
-  Entity,
-  Post
+  Person
 };

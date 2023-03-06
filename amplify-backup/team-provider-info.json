@@ -1,0 +1,41 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-amplifyemotionapp-dev-234221-authRole",
+      "UnauthRoleArn": "arn:aws:iam::215521020432:role/amplify-amplifyemotionapp-dev-234221-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::215521020432:role/amplify-amplifyemotionapp-dev-234221-authRole",
+      "Region": "ca-central-1",
+      "DeploymentBucketName": "amplify-amplifyemotionapp-dev-234221-deployment",
+      "UnauthRoleName": "amplify-amplifyemotionapp-dev-234221-unauthRole",
+      "StackName": "amplify-amplifyemotionapp-dev-234221",
+      "StackId": "arn:aws:cloudformation:ca-central-1:215521020432:stack/amplify-amplifyemotionapp-dev-234221/628b5430-b241-11ed-9160-0e2d05b9ef96",
+      "AmplifyAppId": "d3teoy2f86o51z"
+    },
+    "categories": {
+      "auth": {
+        "amplifyemotionapp": {}
+      },
+      "storage": {
+        "s3amplifyemotionappstorage5899e7ed": {}
+      }
+    }
+  },
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-amplifyemotionapp-staging-223022-authRole",
+      "UnauthRoleArn": "arn:aws:iam::215521020432:role/amplify-amplifyemotionapp-staging-223022-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::215521020432:role/amplify-amplifyemotionapp-staging-223022-authRole",
+      "Region": "ca-central-1",
+      "DeploymentBucketName": "amplify-amplifyemotionapp-staging-223022-deployment",
+      "UnauthRoleName": "amplify-amplifyemotionapp-staging-223022-unauthRole",
+      "StackName": "amplify-amplifyemotionapp-staging-223022",
+      "StackId": "arn:aws:cloudformation:ca-central-1:215521020432:stack/amplify-amplifyemotionapp-staging-223022/29c15b50-b16e-11ed-bc92-0e86993eb6bc",
+      "AmplifyAppId": "d3teoy2f86o51z"
+    },
+    "categories": {
+      "auth": {
+        "amplifyemotionapp": {}
+      }
+    }
+  }
+}

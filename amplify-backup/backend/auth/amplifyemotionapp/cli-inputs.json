@@ -3,7 +3,7 @@
   "cognitoConfig": {
     "identityPoolName": "testAuthIdentityPool",
     "allowUnauthenticatedIdentities": true,
-    "resourceNameTruncated": "amplif988ae895",
+    "resourceNameTruncated": "amplif549a3095",
     "userPoolName": "amplifyemotionapp",
     "autoVerifiedAttributes": [
       "email"
@@ -30,9 +30,9 @@
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [],
     "userpoolClientReadAttributes": [],
-    "userpoolClientLambdaRole": "amplif988ae895_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "amplif549a3095_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "988ae895",
+    "sharedId": "549a3095",
     "resourceName": "amplifyemotionapp",
     "authSelections": "identityPoolAndUserPool",
     "serviceName": "Cognito",

@@ -11,7 +11,7 @@ import { Icon, Button, Flex, Text, TextField, SelectField } from '@aws-amplify/u
 //   "socialIdentity":  /* Provide init commands */,
 //   "emotion": "Lorem ipsum dolor sit amet",
 //   "socialRelation":  /* Provide init commands */,
-//   "interaction":  /* Provide init commands */,
+//   "socialInteraction":  /* Provide init commands */,
 //   "environment":  /* Provide init commands */
 // })
 // );

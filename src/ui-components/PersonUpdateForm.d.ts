@@ -20,7 +20,7 @@ export declare type PersonUpdateFormInputValues = {
     socialIdentity?: string;
     emotion?: string;
     socialRelation?: string;
-    interaction?: string;
+    socialInteraction?: string;
     environment?: string;
 };
 export declare type PersonUpdateFormValidationValues = {
@@ -30,7 +30,7 @@ export declare type PersonUpdateFormValidationValues = {
     socialIdentity?: ValidationFunction<string>;
     emotion?: ValidationFunction<string>;
     socialRelation?: ValidationFunction<string>;
-    interaction?: ValidationFunction<string>;
+    socialInteraction?: ValidationFunction<string>;
     environment?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
@@ -42,7 +42,7 @@ export declare type PersonUpdateFormOverridesProps = {
     socialIdentity?: PrimitiveOverrideProps<TextAreaFieldProps>;
     emotion?: PrimitiveOverrideProps<TextFieldProps>;
     socialRelation?: PrimitiveOverrideProps<TextAreaFieldProps>;
-    interaction?: PrimitiveOverrideProps<TextAreaFieldProps>;
+    socialInteraction?: PrimitiveOverrideProps<TextAreaFieldProps>;
     environment?: PrimitiveOverrideProps<TextAreaFieldProps>;
 } & EscapeHatchProps;
 export declare type PersonUpdateFormProps = React.PropsWithChildren<{

@@ -54,7 +54,7 @@
     }
   },
   "storage": {
-    "s3amplifyemotionappstorageed41bc89": {
+    "s3amplifyemotionappstorage5899e7ed": {
       "dependsOn": [],
       "providerPlugin": "awscloudformation",
       "service": "S3"

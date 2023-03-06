@@ -36,7 +36,7 @@ export default function PersonUpdateForm(props) {
     socialIdentity: "",
     emotion: "",
     socialRelation: "",
-    interaction: "",
+    socialInteraction: "",
     environment: "",
   };
   const [image, setImage] = React.useState(initialValues.image);
@@ -51,8 +51,8 @@ export default function PersonUpdateForm(props) {
   const [socialRelation, setSocialRelation] = React.useState(
     initialValues.socialRelation
   );
-  const [interaction, setInteraction] = React.useState(
-    initialValues.interaction
+  const [socialInteraction, setSocialInteraction] = React.useState(
+    initialValues.socialInteraction
   );
   const [environment, setEnvironment] = React.useState(
     initialValues.environment
@@ -80,10 +80,10 @@ export default function PersonUpdateForm(props) {
         ? cleanValues.socialRelation
         : JSON.stringify(cleanValues.socialRelation)
     );
-    setInteraction(
-      typeof cleanValues.interaction === "string"
-        ? cleanValues.interaction
-        : JSON.stringify(cleanValues.interaction)
+    setSocialInteraction(
+      typeof cleanValues.socialInteraction === "string"
+        ? cleanValues.socialInteraction
+        : JSON.stringify(cleanValues.socialInteraction)
     );
     setEnvironment(
       typeof cleanValues.environment === "string"
@@ -102,13 +102,13 @@ export default function PersonUpdateForm(props) {
   }, [idProp, person]);
   React.useEffect(resetStateValues, [personRecord]);
   const validations = {
-    image: [{ type: "Required" }],
-    boxColour: [{ type: "Required" }],
+    image: [],
+    boxColour: [],
     physicalSignal: [{ type: "JSON" }],
     socialIdentity: [{ type: "JSON" }],
-    emotion: [{ type: "Required" }],
+    emotion: [],
     socialRelation: [{ type: "JSON" }],
-    interaction: [{ type: "JSON" }],
+    socialInteraction: [{ type: "JSON" }],
     environment: [{ type: "JSON" }],
   };
   const runValidationTasks = async (
@@ -142,7 +142,7 @@ export default function PersonUpdateForm(props) {
           socialIdentity,
           emotion,
           socialRelation,
-          interaction,
+          socialInteraction,
           environment,
         };
         const validationResponses = await Promise.all(
@@ -192,7 +192,7 @@ export default function PersonUpdateForm(props) {
     >
       <TextField
         label="Image"
-        isRequired={true}
+        isRequired={false}
         isReadOnly={false}
         value={image}
         onChange={(e) => {
@@ -205,7 +205,7 @@ export default function PersonUpdateForm(props) {
               socialIdentity,
               emotion,
               socialRelation,
-              interaction,
+              socialInteraction,
               environment,
             };
             const result = onChange(modelFields);
@@ -223,7 +223,7 @@ export default function PersonUpdateForm(props) {
       ></TextField>
       <TextField
         label="Box colour"
-        isRequired={true}
+        isRequired={false}
         isReadOnly={false}
         value={boxColour}
         onChange={(e) => {
@@ -236,7 +236,7 @@ export default function PersonUpdateForm(props) {
               socialIdentity,
               emotion,
               socialRelation,
-              interaction,
+              socialInteraction,
               environment,
             };
             const result = onChange(modelFields);
@@ -267,7 +267,7 @@ export default function PersonUpdateForm(props) {
               socialIdentity,
               emotion,
               socialRelation,
-              interaction,
+              socialInteraction,
               environment,
             };
             const result = onChange(modelFields);
@@ -298,7 +298,7 @@ export default function PersonUpdateForm(props) {
               socialIdentity: value,
               emotion,
               socialRelation,
-              interaction,
+              socialInteraction,
               environment,
             };
             const result = onChange(modelFields);
@@ -316,7 +316,7 @@ export default function PersonUpdateForm(props) {
       ></TextAreaField>
       <TextField
         label="Emotion"
-        isRequired={true}
+        isRequired={false}
         isReadOnly={false}
         value={emotion}
         onChange={(e) => {
@@ -329,7 +329,7 @@ export default function PersonUpdateForm(props) {
               socialIdentity,
               emotion: value,
               socialRelation,
-              interaction,
+              socialInteraction,
               environment,
             };
             const result = onChange(modelFields);
@@ -360,7 +360,7 @@ export default function PersonUpdateForm(props) {
               socialIdentity,
               emotion,
               socialRelation: value,
-              interaction,
+              socialInteraction,
               environment,
             };
             const result = onChange(modelFields);
@@ -377,10 +377,10 @@ export default function PersonUpdateForm(props) {
         {...getOverrideProps(overrides, "socialRelation")}
       ></TextAreaField>
       <TextAreaField
-        label="Interaction"
+        label="Social interaction"
         isRequired={false}
         isReadOnly={false}
-        value={interaction}
+        value={socialInteraction}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
@@ -391,21 +391,23 @@ export default function PersonUpdateForm(props) {
               socialIdentity,
               emotion,
               socialRelation,
-              interaction: value,
+              socialInteraction: value,
               environment,
             };
             const result = onChange(modelFields);
-            value = result?.interaction ?? value;
+            value = result?.socialInteraction ?? value;
           }
-          if (errors.interaction?.hasError) {
-            runValidationTasks("interaction", value);
+          if (errors.socialInteraction?.hasError) {
+            runValidationTasks("socialInteraction", value);
           }
-          setInteraction(value);
+          setSocialInteraction(value);
         }}
-        onBlur={() => runValidationTasks("interaction", interaction)}
-        errorMessage={errors.interaction?.errorMessage}
-        hasError={errors.interaction?.hasError}
-        {...getOverrideProps(overrides, "interaction")}
+        onBlur={() =>
+          runValidationTasks("socialInteraction", socialInteraction)
+        }
+        errorMessage={errors.socialInteraction?.errorMessage}
+        hasError={errors.socialInteraction?.hasError}
+        {...getOverrideProps(overrides, "socialInteraction")}
       ></TextAreaField>
       <TextAreaField
         label="Environment"
@@ -422,7 +424,7 @@ export default function PersonUpdateForm(props) {
               socialIdentity,
               emotion,
               socialRelation,
-              interaction,
+              socialInteraction,
               environment: value,
             };
             const result = onChange(modelFields);
